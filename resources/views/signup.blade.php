@@ -1,20 +1,29 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('master')
 
-        <title>SignUp</title>
+@section('signup', 'SignUp')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+@section('content')
 
-        <!-- Styles -->
-        <style>
-        </style>
-    </head>
-    <body>
-        
+<h1>Signup Page</h1>
 
-    </body>
-</html>
+<!--
+Basically create a bunch of forms that submit a post request to creating a new table with those forms in them
+-->
+
+<form id="entry-fields" action="/create user" >
+  <li>First Name <input></input></li>
+  <li>Last Name <input></input></li>
+  <li>Email Address <input></input></li>
+  <li>Password - at least 8 characters with 1 number <input></input></li>
+  <li>Confirm Password <input></input></li>
+  
+  {{ csrf_field() }}
+
+  <button id="join-button" onclick="" >JOIN NOW</button>
+</form>
+
+<?php
+
+?>
+
+@endsection

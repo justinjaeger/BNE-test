@@ -10,4 +10,9 @@ class SignUpController extends Controller
     {
       return view('signup');
     }
+
+    public function createUser(Request $request)
+    {
+
+    }
 }

@@ -10,12 +10,21 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
+// renders the register view
 Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware('guest')
                 ->name('register');
 
+// validates that the fields are correct and filled out
+// Creates a new user
+// I changed it to do the email and validate first
+// then the email has to load the "store", which I'm trying below
+// Route::post('/register', [RegisteredUserController::class, 'validate'])
+//                 ->middleware('guest');
+
+// this should actually create the user               
 Route::post('/register', [RegisteredUserController::class, 'store'])
-                ->middleware('guest');
+                ->middleware('guest');      
 
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])
                 ->middleware('guest')
